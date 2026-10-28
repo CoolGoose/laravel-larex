@@ -9,10 +9,10 @@ jobs:
   psalm:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 #v6
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 #v2
         with:
           php-version: '8.0'
           coverage: none
@@ -71,10 +71,10 @@ jobs:
     name: Laravel ${{ matrix.laravel }} with PHP ${{ matrix.php }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 #v6
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 #v2
         with:
           php-version: ${{ matrix.php }}
           coverage: none
@@ -94,10 +94,10 @@ jobs:
       - tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 #v6
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 #v2
         with:
           php-version: 8.0
           coverage: xdebug
@@ -112,7 +112,7 @@ jobs:
           run: composer run-script test-coverage
       
       -   name: Upload Coverage
-          uses: qltysh/qlty-action/coverage@v2
+          uses: qltysh/qlty-action/coverage@ebcd284bf32e36a030afe15f1e136c7be08b9506 #v2
           with:
               token: ${{ secrets.COVERAGE_TOKEN }}
               files: ${{github.workspace}}/coverage.xml
